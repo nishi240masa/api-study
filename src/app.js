@@ -26,6 +26,14 @@ router.get(
   })
 );
 
+router.get(
+  "/test",
+  defineEventHandler((event) => {
+    setResponseHeader(event, "Access-Control-Allow-Origin", "*");
+    return { message: "これはgetの処理" };
+  })
+);
+
 // GET,POST,PUT,DELETE
 // GET: リソースの取得
 // POST: リソースの作成
